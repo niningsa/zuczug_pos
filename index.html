@@ -15,7 +15,6 @@
     	console.log("进来了");
         var download = document.getElementById('download');
         download.innerHTML='准 备 下 载 中...';
- 
         window.location.href = "itms-services://?action=download-manifest&url=https://github.com/niningsa/zuczug_pos/blob/master/manifest.plist";
         setTimeout(function () {
             download.innerHTML='点击安装后,请按Home键在桌面查看';

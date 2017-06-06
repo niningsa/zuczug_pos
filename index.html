@@ -7,5 +7,20 @@
 </head>
 <body>
   <a href="itms-services://?action=download-manifest&url=https://github.com/niningsa/zuczug_pos/blob/master/manifest.plist">点击开始安装App</a>
+  <button onclick='download()' id="download">立 即 安 装</button>
 </body>
+<script>
+    
+    function download() {
+        var download = document.getElementById('download');
+        download.innerHTML='准 备 下 载 中...';
+        var isiOS = !!navigator.userAgent.match(/\(i[^;]+;( U;)? CPU.+Mac OS X/);
+        if (isiOS) {
+            window.location.href = "itms-services://?action=download-manifest&url=https://github.com/niningsa/zuczug_pos/blob/master/manifest.plist";
+            setTimeout(function () {
+                download.innerHTML='点击安装后,请按Home键在桌面查看';
+            },4000);
+        }
+    }
+</script>
 </html>
